@@ -1,0 +1,59 @@
+{
+  "cli": {
+    "version": ">= 5.9.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "distribution": "internal",
+      "developmentClient": true,
+      "releaseChannel": "development",
+      "env": {
+        "APP_VARIANT": "development",
+        "EXPO_PUBLIC_APP_NAME": "ERB Dev"
+      }
+    },
+    "simulator": {
+      "extends": "development",
+      "ios": {
+        "simulator": true
+      },
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "ERB Sim"
+      }
+    },
+    "emulator": {
+      "extends": "development",
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "ERB Emu"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "releaseChannel": "preview",
+      "env": {
+        "EXPO_PUBLIC_APP_NAME": "ERB Prev"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "releaseChannel": "prod",
+      "android": {
+        "buildType": "apk"
+      },
+      "env": {
+        "APP_VARIANT": "production",
+        "EXPO_PUBLIC_APP_NAME": "ERB_1972"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "api-6367223419543317737-885603-2a2789a0ed17.json",
+        "track": "internal",
+        "releaseStatus": "draft"
+      }
+    }
+  }
+}
